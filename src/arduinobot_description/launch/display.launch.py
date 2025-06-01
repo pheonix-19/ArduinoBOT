@@ -9,7 +9,7 @@ def generate_launch_description():
     # Declare the model argument
     model_arg = DeclareLaunchArgument(
         name='model',
-        default_value=os.path.join(get_package_share_directory('arduino_bot_description'), 'urdf', 'arduino-bot.urdf.xacro'),
+        default_value=os.path.join(get_package_share_directory('arduinobot_description'), 'urdf', 'arduino-bot.urdf.xacro'),
         description='Absolute path to robot URDF file'
     )
 
@@ -35,7 +35,7 @@ def generate_launch_description():
         executable='rviz2',
         name='rviz2',
         output='screen',
-        arguments=['-d', os.path.join(get_package_share_directory('arduino_bot_description'), 'rviz', 'arduino_bot.rviz')]
+        arguments=['-d', os.path.join(get_package_share_directory('arduinobot_description'), 'rviz', 'arduino_bot.rviz')]
     )
 
     # Return the LaunchDescription

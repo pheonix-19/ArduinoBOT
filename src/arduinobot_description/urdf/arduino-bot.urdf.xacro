@@ -8,11 +8,11 @@
     <!-- Load Simulated or Real Hardware Interfaces -->
     <xacro:arg name="is_sim" default="true"/>
 
-    <!-- Include Gazebo Parameters -->
-    <!-- <xacro:include filename="$(find arduino_bot_description)/urdf/arduinobot_gazebo.xacro" /> -->
+    <!-- Include Gazebo Parameters --> 
+    <xacro:include filename="$(find arduinobot_description)/urdf/arduinobot_gazebo.xacro" />
 
     <!-- Include ros2_control Plugins -->
-    <!-- <xacro:include filename="$(find arduino_bot_description)/urdf/arduinobot_ros2_control.xacro" /> -->
+    <!-- <xacro:include filename="$(find arduinobot_description)/urdf/arduinobot_ros2_control.xacro" /> -->
 
   <xacro:property name="PI" value="3.14159265359"/>
   <xacro:property name="effort" value="30.0"/>
@@ -146,18 +146,19 @@
     </collision>
   </link>
   <link name="rgb_camera">
+      <xacro:default_inertial mass="0.001"/>
       <visual>
             <origin rpy="-1.57 0 -1.57" xyz="-0.1 0.125 0.15"/>
             <geometry>
                 <mesh filename="package://arduinobot_description/meshes/pi_camera.STL" scale="0.01 0.01 0.01"/>
             </geometry>
       </visual>
-      <collisison>
+      <collision>
             <origin rpy="-1.57 0 -1.57" xyz="-0.1 0.125 0.15"/>
             <geometry>
                 <mesh filename="package://arduinobot_description/meshes/pi_camera.STL" scale="0.01 0.01 0.01"/>
             </geometry>
-      </collisison>
+      </collision>
   </link>
 
   <joint name="virtual_joint" type="fixed">
