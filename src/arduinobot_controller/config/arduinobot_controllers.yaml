@@ -1,0 +1,37 @@
+controller_manager:
+  ros__parameters:
+    
+    arm_controller:
+      type: joint_trajectory_controller/JointTrajectoryController
+      joint_names: ["joint1", "joint2", "joint3"]
+      command_interface_type: "position"
+      state_interface_type: "position"
+
+    gripper_controller:
+      # type: joint_trajectory_controller/JointTrajectoryController
+      type: forward_command_controller/ForwardCommandController
+      
+
+    joint_state_broadcaster:
+      type: joint_state_broadcaster/JointStateBroadcaster
+
+
+arm_controller:
+  ros__parameters:
+    joint_names: ["joint_1", "joint_2", "joint_3"]
+    command_interface_type: "position"
+    state_interface_type: "position"
+    open_loop_control: true
+    allow_integration_in_goal_trajectories: true
+    
+
+gripper_controller:
+  ros__parameters:
+    joint_names: ["joint_5"]
+    interface_name: "position"
+
+    # command_interface_type: "position"
+    # state_interface_type: "position"
+    # open_loop_control: true
+    # allow_integration_in_goal_trajectories: true
+            
