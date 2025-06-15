@@ -54,8 +54,8 @@ def generate_launch_description():
 
     return LaunchDescription([
         robot_state_publisher_node,
-        controller_manager,
+        # controller_manager,
         joint_state_broadcaster_spawner,
-        TimerAction(period=3.0, actions=[arm_controller_spawner]),  # 3 second delay
-        TimerAction(period=3.5, actions=[gripper_controller_spawner]),  # 3.5 second delay
+        TimerAction(period=5.0, actions=[arm_controller_spawner]),  # 3 second delay
+        TimerAction(period=6.0, actions=[gripper_controller_spawner]),  # 3.5 second delay
     ])
