@@ -3,6 +3,8 @@ import numpy as np
 from rclpy.logging import get_logger
 from moveit.planning import MoveItPy
 from moveit.core.robot_state import RobotState
+# This example demonstrates how to use MoveItPy to control a robot arm and gripper.
+
 
 def move_robot():
     arduinobot = MoveItPy(node_name="moveit_py")
